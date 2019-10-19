@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void on_button_click(View view) {
         EditText et = this.findViewById(R.id.textInputEditText2);
+        TextView ScoreBoard = this.findViewById(R.id.Score);
         TextView tv = this.findViewById(R.id.numberTextView);
         TextView congrats = this.findViewById(R.id.congrats);
         congrats.setText("");
@@ -71,13 +72,19 @@ public class MainActivity extends AppCompatActivity {
         String number = Integer.toString(r.nextInt(6) + 1);
         tv.setText(number);
         String InputtedValue = et.getText().toString();
-        System.out.println("number is "+number);
-        System.out.println("your input is " +InputtedValue);
-        if (number.equalsIgnoreCase(InputtedValue)){
+        System.out.println("number is " + number);
+        System.out.println("your input is " + InputtedValue);
+        int score = Integer.parseInt(ScoreBoard.getText().toString());
+        System.out.println("The current score is "+score);
+        if (number.equalsIgnoreCase(InputtedValue)) {
             System.out.println("Congrats");
             congrats.setText("Congratulations!");
+            score ++;
+            System.out.println("The current score is "+score);
+            ScoreBoard.setText(Integer.toString(score));
+
+
         }
-
-
     }
+
 }
