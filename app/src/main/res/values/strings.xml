@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">DiceRoller</string>
     <string name="action_settings">Settings</string>
+    <string name="roll_the_dice">Roll the dice</string>
+    <string name="text">____</string>
+    <string name="enter_a_number_between_1_and_6">Enter a number between 1 and 6</string>
+    <string name="___">___</string>
 </resources>

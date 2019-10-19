@@ -1,5 +1,6 @@
 package com.example.diceroller;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -16,6 +17,8 @@ import android.widget.TextView;
 
 import java.time.Clock;
 import java.util.Random;
+
+import static java.lang.Thread.sleep;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -58,9 +61,12 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void on_button_click(View view){
+    @SuppressLint("SetTextI18n")
+    public void on_button_click(View view) {
         EditText et = this.findViewById(R.id.textInputEditText2);
         TextView tv = this.findViewById(R.id.numberTextView);
+        TextView congrats = this.findViewById(R.id.congrats);
+        congrats.setText("");
         Random r = new Random();
         String number = Integer.toString(r.nextInt(6) + 1);
         tv.setText(number);
@@ -69,10 +75,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("your input is " +InputtedValue);
         if (number.equalsIgnoreCase(InputtedValue)){
             System.out.println("Congrats");
-            tv.setText("Congratualtions!");
-        }
-        else{
-
+            congrats.setText("Congratulations!");
         }
 
 
