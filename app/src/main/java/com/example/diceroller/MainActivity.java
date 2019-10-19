@@ -11,8 +11,10 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import java.time.Clock;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -57,10 +59,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void on_button_click(View view){
+        EditText et = this.findViewById(R.id.textInputEditText2);
         TextView tv = this.findViewById(R.id.numberTextView);
         Random r = new Random();
-        int number = r.nextInt(6) + 1;
+        String number = Integer.toString(r.nextInt(6) + 1);
+        tv.setText(number);
+        String InputtedValue = et.getText().toString();
+        System.out.println("number is "+number);
+        System.out.println("your input is " +InputtedValue);
+        if (number.equalsIgnoreCase(InputtedValue)){
+            System.out.println("Congrats");
+            tv.setText("Congratualtions!");
+        }
+        else{
 
-        tv.setText(Integer.toString(number));
+        }
+
+
     }
 }
